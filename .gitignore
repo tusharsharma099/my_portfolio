@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.pyd
+
+# Django Stuff
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Environment
+env/
+venv/
+ENV/
+*.env
+*.venv
+.env
+
+# Vercel
+.vercel/
+
+# IDE
+.vscode/
+.idea/
+
+# Byte-compiled
+*.pyc
+*.pyd
+*.pyo
+
+# Build directories
+build/
+dist/
+
+# Pip
+pip-log.txt
+
+# Mac
+.DS_Store
+
+# pycache
+**/__pycache__/
+
+# Local settings
+local_settings.py
+

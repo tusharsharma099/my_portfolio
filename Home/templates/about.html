@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<style>
+
+    .about-title {
+        font-size: 48px;
+        font-weight: bold;
+        color: #6a5cff;
+    }
+
+    .about-role {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #333;
+        margin-bottom: 18px;
+    }
+
+    .about-image-wrapper {
+
+        display: inline-block;
+        transition: all 0.35s ease-in-out;
+        border-radius: 50%;
+    }
+
+    /* 🔥 PERFECT BORDER COLOR GLOW */
+    .about-image-wrapper:hover {
+        transform: scale(1.10);
+        box-shadow:
+            0 0 15px #8ea0ff,
+            0 0 30px #b7c8ff,
+            0 0 45px #e8ecff;
+    }
+
+    .about-image {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+    }
+
+    .email-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 17px;
+        margin-top: 20px;
+    }
+
+</style>
+
+<div class="row d-flex align-items-start mt-4">
+
+    <div class="col-md-7">
+        <div class="about-title">Tushar Sharma</div>
+        <div class="about-role">DevOps Enthusiast</div>
+
+        <p class="about-text">
+            Hey there! I’m Tushar Sharma, a passionate and curious developer exploring tech every day.
+        </p>
+
+        <p class="about-text">
+            I enjoy crafting seamless digital experiences — from designing responsive interfaces 
+            to building scalable backend systems and automation workflows.
+        </p>
+
+        <p class="about-text">
+            My passion lies in experimenting, learning, and solving real-world problems.
+        </p>
+
+        <p class="about-text">
+            Outside tech, I enjoy brainstorming ideas and thinking creatively.
+        </p>
+
+        <p class="about-text">
+            Let’s connect and create something awesome together!
+        </p>
+
+        <div class="email-box">
+            <i class="bi bi-envelope-fill" style="color:#6a5cff; font-size:22px;"></i>
+            <a href="mailto:tusharsharma747@gmail.com" style="text-decoration:none; color:#333;">
+                tusharsharma747@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-5 text-center d-flex justify-content-center">
+        <div class="about-image-wrapper">
+            <img src="/static/profile1.jpg" class="about-image" >
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

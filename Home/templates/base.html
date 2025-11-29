@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Tushar Sharma</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+
+        /* ---------------- NAVBAR ---------------- */
+
+        .navbar-custom {
+            background-color: #6a5cff !important;       /* Tushar Sharma purple theme */
+            padding: 12px 40px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .navbar-custom .navbar-brand {
+            color: white !important;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .navbar-custom .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin-left: 22px;
+            transition: 0.3s ease;
+            font-size: 17px;
+        }
+
+        /* 🔥 Navbar Hover */
+        .navbar-custom .nav-link:hover {
+            text-shadow: 0px 0px 8px rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+        }
+
+        /* 🔥 Active Link (Optional) */
+        .navbar-custom .nav-link.active {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        /* Page container spacing */
+        .main-container {
+            padding: 40px 60px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 🔥 NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="/">Portfolio</a>
+
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav">
+                <i class="bi bi-list" style="font-size: 28px;"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="/about/">About Me</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/projects/' %}active{% endif %}" href="/projects/">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="/contact/">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/resume/' %}active{% endif %}" href="/resume/">Resume</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="main-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

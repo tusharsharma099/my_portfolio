@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<style>
+
+    .contact-heading {
+        font-size: 45px;
+        font-weight: 700;
+        color: #6a5cff;
+        margin-bottom: 10px;
+    }
+
+    .contact-sub {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .contact-desc {
+        font-size: 16px;
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 380px;
+    }
+
+    /* Form Styling */
+    .contact-input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 15px;
+        margin-bottom: 18px;
+        transition: 0.3s ease;
+    }
+
+    .contact-input:focus {
+        border-color: #6a5cff;
+        box-shadow: 0 0 5px rgba(106, 92, 255, 0.4);
+        outline: none;
+    }
+
+    /* Submit Button */
+    .contact-btn {
+        background: #6a5cff;
+        border: none;
+        padding: 10px 30px;
+        color: white;
+        font-weight: 600;
+        border-radius: 6px;
+        transition: 0.3s ease;
+    }
+
+    .contact-btn:hover {
+        background: #4033ff;
+        box-shadow: 0 0 10px rgba(106, 92, 255, 0.7);
+        transform: translateY(-2px);
+    }
+
+    /* Social Icons */
+    .contact-icons i {
+        font-size: 32px;
+        margin-right: 20px;
+        color: #6a5cff;
+        transition: 0.3s ease;
+        cursor: pointer;
+    }
+
+    .contact-icons i:hover {
+        transform: scale(1.2);
+        color: #4033ff;
+    }
+
+</style>
+
+<div class="container mt-5">
+    <div class="row align-items-start">
+
+        <!-- LEFT CONTENT -->
+        <div class="col-md-6">
+
+            <div class="contact-heading">Get in Touch</div>
+            <div class="contact-sub">I'd love to hear from you!</div>
+
+            <p class="contact-desc">
+                If you have any inquiries, collaboration ideas, or just want to say hi,
+                feel free to reach out using the form — I usually respond within a few hours.
+            </p>
+
+            <!-- Email Link -->
+            <p style="font-size:17px; font-weight:500;">
+                📧  
+                <a href="mailto:tusharsharma747@gmail.com" 
+                   style="text-decoration:none; color:#6a5cff;">
+                   tusharsharma747@gmail.com
+                </a>
+            </p>
+
+            <!-- Social Icons -->
+            <div class="contact-icons mt-3">
+                <a href="https://www.linkedin.com/in/tushar-sharma-77063225b" target="_blank">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/tusharsharma099" target="_blank">
+                    <i class="bi bi-github"></i>
+                </a>
+
+                <a href="https://www.instagram.com/tuxhar.sharma/" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+
+        </div>
+
+        {% if request.GET.success %}
+    <div class="alert alert-success">
+        Your message has been sent successfully!
+    </div>
+{% endif %}
+
+        <!-- RIGHT FORM -->
+        <div class="col-md-6">
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" name="first_name" class="contact-input" placeholder="First Name" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="text" name="last_name" class="contact-input" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <input type="email" name="email" class="contact-input" placeholder="Email *" required>
+
+                <textarea name="message" class="contact-input" rows="5" 
+                    placeholder="Message..." required></textarea>
+
+                <button type="submit" class="contact-btn">Send</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
