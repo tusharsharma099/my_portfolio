@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from Home import views   # ← apne app ka import
 
 urlpatterns = [
@@ -25,5 +25,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('resume/', views.resume, name='resume'),
     path('about/', views.about, name='about'),
+    path("", include("Home.urls")),
 
 ]
