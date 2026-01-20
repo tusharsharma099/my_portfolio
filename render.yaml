@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: django-portfolio
+    name: my_portfolio
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn portfolio.wsgi:application"
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn portfolio.wsgi:application
