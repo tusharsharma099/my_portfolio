@@ -1,21 +1,16 @@
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-*.pdb
-*.pyd
 
-# Django Stuff
+# Django
 *.log
 *.pot
-*.pyc
-*.sqlite3
 db.sqlite3
+*.sqlite3
 media/
 staticfiles/
 
-# Environment
+# Virtual Environments
 env/
 venv/
 ENV/
@@ -26,28 +21,16 @@ ENV/
 # Vercel
 .vercel/
 
-# IDE
+# IDEs
 .vscode/
 .idea/
 
-# Byte-compiled
-*.pyc
-*.pyd
-*.pyo
-
-# Build directories
+# Build
 build/
 dist/
 
-# Pip
-pip-log.txt
-
-# Mac
+# OS
 .DS_Store
-
-# pycache
-**/__pycache__/
 
 # Local settings
 local_settings.py
-
